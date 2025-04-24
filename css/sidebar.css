@@ -1,0 +1,49 @@
+#toggleBtn {
+    width: 46px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #1AB394;
+}
+#sidebarCol {
+    background-color: #293846;
+}
+#sidebar {
+    background-color: #2f4050;
+}
+#logo {
+    padding: 56px 15px;
+}
+.item {
+    text-decoration: none;
+    color: #A7B1C2;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.item:hover {
+    color: white;
+    background-color: #293846;
+}
+.signout{
+    height: 6vh;
+    color: white;
+    background-color: #1AB394;
+}
+/* Ẩn sidebar khi collapsed */
+#sidebarCol.collapsed {
+    width: 0 !important;
+    overflow: hidden;
+    padding: 0 !important;
+    transition: all 0.3s ease;
+}
+
+  /* Thêm hiệu ứng khi sidebar mở/đóng */
+#sidebarCol {
+    transition: all 0.3s ease;
+}
+
+  /* Mở rộng nội dung khi sidebar bị ẩn */
+#mainContent.col-12 {
+    transition: all 0.3s ease;
+}

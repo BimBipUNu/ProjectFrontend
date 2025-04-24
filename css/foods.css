@@ -1,0 +1,149 @@
+body {
+    display: flex;
+    gap:0;
+    background-color: #f3f3f4;
+}
+#banner {
+    background-color: white;
+    margin-bottom: 25px;
+    padding-left: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+#search {
+    width: calc(695 / 16*1rem);
+}
+#sort {
+    width: calc(218 / 16*1rem);
+}
+#category {
+    width: calc(200 / 16*1rem);
+}
+
+.font-size-12{
+    font-size: 12px;
+}
+.color-lightgray{
+    color: lightgray;
+}
+.color-gray{
+    color: gray;
+}
+.cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(1150 / 16*1rrem);
+    height: 59px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.cart:hover {
+    color: gray;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+.description{
+    margin: 10px;
+    padding: 0;
+}
+p{
+    margin: 0;
+}
+.description span {
+    font-size: 12px;
+    color: lightgray;
+}
+.box {
+    width: 45%;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    text-align: center;
+}
+.create p {
+    margin: 15px;
+}
+.custom-width-modal {
+    max-width: calc(898 /16*1rem) !important;
+}
+
+.food-modal {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.food-info-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 10px;
+    text-align: left;
+}
+
+.info-block {
+    display: flex;
+    flex-direction: row;
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.info-block.full-width {
+    grid-column: span 2;
+}
+
+.label {
+    min-width: 35px;
+    height: 100%;
+    padding: 5px;
+    margin: 0;
+    background-color: whitesmoke;
+    border-right: 1px solid whitesmoke;
+}
+.flex-1{
+    flex: 1;
+    min-width: 145px;
+    height: 52px;
+}
+.value {
+    background-color: #EEEEEE;
+    padding: 10px;
+    flex: 2;
+}
+
+.no-label {
+    text-align: right;
+}
+
+.nutrition-box {
+    margin-top: 25px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #00b894;
+}
+
+.macrronutrients-grid {
+    display: grid;
+    gap: 7px 30px;
+    grid-template-columns: 1fr 1fr;
+}
+.micronutrients-grid{
+    display: grid;
+    gap: 7px 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
