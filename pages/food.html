@@ -14,237 +14,92 @@
 </head>
 
 <body>
-    <div class="container-fluid"> <!--Toàn bộ giao diện-->
-        <div class="row">
-            <div class="sidebar-wrapper col-2 min-vh-100 d-flex flex-column p-0" id="sidebarCol"> <!--sidebar-->
-                <img id="logo" class="img-fluid" src="../assets/img/logo.png" alt="logo">
-                <div class="sidebar d-flex flex-column flex-grow-1" id="sidebar">
-                    <a class="item" href="home-page.html">
-                        <i class="fa-solid fa-house"></i>
-                        <span>Homepage</span>
-                    </a>
-                    <a class="item" href="food.html">
-                        <i class="fa-solid fa-apple-whole"></i>
-                        <span>Foods</span>
-                    </a>
-                    <a class="item" href="recipes.html">
-                        <i class="fa-solid fa-utensils"></i>
-                        <span>Recipes</span>
-                    </a>
-                    <a href="#" class="item signout mt-auto">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        <span>Sign out</span>
-                    </a>
-                </div>
+    <div class="d-flex justify-content-start"> <!--Toàn bộ giao diện-->
+        <div class="sidebar-wrapper col-2 min-vh-100 d-flex flex-column p-0" id="sidebarCol"> <!--sidebar-->
+            <img id="logo" class="img-fluid" src="../assets/img/logo.png" alt="logo">
+            <div class="sidebar d-flex flex-column flex-grow-1" id="sidebar">
+                <a class="item" href="home-page.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Homepage</span>
+                </a>
+                <a class="item" href="food.html">
+                    <i class="fa-solid fa-apple-whole"></i>
+                    <span>Foods</span>
+                </a>
+                <a class="item" href="recipes.html">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Recipes</span>
+                </a>
+                <a href="#" class="item signout mt-auto">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Sign out</span>
+                </a>
             </div>
+        </div>
 
-            <div class="col-10" id="mainContent"><!--Content -->
-                <!-- Navbar -->
-                <nav class="navbar navbar-dark mb-4">
-                    <div class="container-fluid">
-                        <button class="toggle-btn" id="toggleBtn">☰</button>
-                        <span>Tài Trần</span>
-                    </div>
-                </nav>
-
-                <div id="banner">
-                    <p>Food databases</p>
-                    <small>Create, check and update foods that you can use on meal plans</small>
+        <div id="mainContent" class="mleft-custom"><!--Content -->
+            <!-- Navbar -->
+            <nav class="navbar navbar-dark mb-4">
+                <div class="container-fluid">
+                    <button class="toggle-btn" id="toggleBtn">☰</button>
+                    <span>Tài Trần</span>
                 </div>
-                <div class="container p-1 bg-white rounded">
-                    <div class="container mt-4 p-0">
-                        <div>
-                            <h4>Foods</h4>
-                            <small class="text-muted">Search, consult and add new foods to the system</small>
-                        </div>
-                        <div class="d-flex gap-5 align-items-center mb-3">
-                            <div>
-                                <input id="search" type="text" class="form-control" placeholder="Search Food">
-                            </div>
-                            <div id="sort" class="d-flex align-items-center">
-                                <i class="fa-solid fa-arrow-up-short-wide border p-2 rounded bg-white"></i>
-                                <select class="form-select">
-                                    <option selected>Sort by nutrient</option>
-                                    <option>Energy</option>
-                                    <option>Fat</option>
-                                    <option>Carbohydrate</option>
-                                    <option>Protein</option>
-                                </select>
-                            </div>
-                            <div id="category">
-                                <select class="form-select">
-                                    <option selected>All Category</option>
-                                    <option>Desserts</option>
-                                    <option>Breakfast and snack</option>
-                                    <option>Appetizers and side dishes</option>
-                                    <option>Soups</option>
-                                    <option>Meat dishes</option>
-                                    <option>Fish dishes</option>
-                                    <option>Vegetarian dishes</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!--DATA-->
-                        <div class="data">
-                            <div class="cart" data-bs-toggle="modal" data-bs-target="#information">
-                                <div class="description">
-                                    <p>Ackee, canned, drained</p>
-                                    <span>McCance and Widdowson's</span>
-                                </div>
-                                <div class="box">
-                                    <div>151 kcal</div>
-                                    <div>15 g</div>
-                                    <div>1 g</div>
-                                    <div>3 g</div>
-                                    <div class="font-size-12 color-lightgray">Energy</div>
-                                    <div class="font-size-12 color-lightgray">Fat</div>
-                                    <div class="font-size-12 color-lightgray">Carbohydydrate</div>
-                                    <div class="font-size-12 color-lightgray">Protein</div>
-                                </div>
-                            </div>
-                            <div class="cart" data-bs-toggle="modal" data-bs-target="#information">
-                                <div class="description">
-                                    <p>Ackee, canned, drained</p>
-                                    <span>McCance and Widdowson's</span>
-                                </div>
-                                <div class="box">
-                                    <div>151 kcal</div>
-                                    <div>15 g</div>
-                                    <div>1 g</div>
-                                    <div>3 g</div>
-                                    <div class="font-size-12 color-lightgray">Energy</div>
-                                    <div class="font-size-12 color-lightgray">Fat</div>
-                                    <div class="font-size-12 color-lightgray">Carbohydydrate</div>
-                                    <div class="font-size-12 color-lightgray">Protein</div>
-                                </div>
-                            </div>
-                            <div class="cart" data-bs-toggle="modal" data-bs-target="#information">
-                                <div class="description">
-                                    <p>Ackee, canned, drained</p>
-                                    <span>McCance and Widdowson's</span>
-                                </div>
-                                <div class="box">
-                                    <div>151 kcal</div>
-                                    <div>15 g</div>
-                                    <div>1 g</div>
-                                    <div>3 g</div>
-                                    <div class="font-size-12 color-lightgray">Energy</div>
-                                    <div class="font-size-12 color-lightgray">Fat</div>
-                                    <div class="font-size-12 color-lightgray">Carbohydydrate</div>
-                                    <div class="font-size-12 color-lightgray">Protein</div>
-                                </div>
-                            </div>
-                            <div class="cart" data-bs-toggle="modal" data-bs-target="#information">
-                                <div class="description">
-                                    <p>Ackee, canned, drained</p>
-                                    <span>McCance and Widdowson's</span>
-                                </div>
-                                <div class="box">
-                                    <div>151 kcal</div>
-                                    <div>15 g</div>
-                                    <div>1 g</div>
-                                    <div>3 g</div>
-                                    <div class="font-size-12 color-lightgray">Energy</div>
-                                    <div class="font-size-12 color-lightgray">Fat</div>
-                                    <div class="font-size-12 color-lightgray">Carbohydydrate</div>
-                                    <div class="font-size-12 color-lightgray">Protein</div>
-                                </div>
-                            </div>
-                            <div class="cart" data-bs-toggle="modal" data-bs-target="#information">
-                                <div class="description">
-                                    <p>Ackee, canned, drained</p>
-                                    <span>McCance and Widdowson's</span>
-                                </div>
-                                <div class="box">
-                                    <div>151 kcal</div>
-                                    <div>15 g</div>
-                                    <div>1 g</div>
-                                    <div>3 g</div>
-                                    <div class="font-size-12 color-lightgray">Energy</div>
-                                    <div class="font-size-12 color-lightgray">Fat</div>
-                                    <div class="font-size-12 color-lightgray">Carbohydydrate</div>
-                                    <div class="font-size-12 color-lightgray">Protein</div>
-                                </div>
-                            </div>
-                            <div class="cart" data-bs-toggle="modal" data-bs-target="#information">
-                                <div class="description">
-                                    <p>Ackee, canned, drained</p>
-                                    <span>McCance and Widdowson's</span>
-                                </div>
-                                <div class="box">
-                                    <div>151 kcal</div>
-                                    <div>15 g</div>
-                                    <div>1 g</div>
-                                    <div>3 g</div>
-                                    <div class="font-size-12 color-lightgray">Energy</div>
-                                    <div class="font-size-12 color-lightgray">Fat</div>
-                                    <div class="font-size-12 color-lightgray">Carbohydydrate</div>
-                                    <div class="font-size-12 color-lightgray">Protein</div>
-                                </div>
-                            </div>
-                            <div class="cart" data-bs-toggle="modal" data-bs-target="#information">
-                                <div class="description">
-                                    <p>Ackee, canned, drained</p>
-                                    <span>McCance and Widdowson's</span>
-                                </div>
-                                <div class="box">
-                                    <div>151 kcal</div>
-                                    <div>15 g</div>
-                                    <div>1 g</div>
-                                    <div>3 g</div>
-                                    <div class="font-size-12 color-lightgray">Energy</div>
-                                    <div class="font-size-12 color-lightgray">Fat</div>
-                                    <div class="font-size-12 color-lightgray">Carbohydydrate</div>
-                                    <div class="font-size-12 color-lightgray">Protein</div>
-                                </div>
-                            </div>
-                            <div class="cart" data-bs-toggle="modal" data-bs-target="#information">
-                                <div class="description">
-                                    <p>Ackee, canned, drained</p>
-                                    <span>McCance and Widdowson's</span>
-                                </div>
-                                <div class="box">
-                                    <div>151 kcal</div>
-                                    <div>15 g</div>
-                                    <div>1 g</div>
-                                    <div>3 g</div>
-                                    <div class="font-size-12 color-lightgray">Energy</div>
-                                    <div class="font-size-12 color-lightgray">Fat</div>
-                                    <div class="font-size-12 color-lightgray">Carbohydydrate</div>
-                                    <div class="font-size-12 color-lightgray">Protein</div>
-                                </div>
-                            </div>
-                            <div class="cart" data-bs-toggle="modal" data-bs-target="#information">
-                                <div class="description">
-                                    <p>Ackee, canned, drained</p>
-                                    <span>McCance and Widdowson's</span>
-                                </div>
-                                <div class="box">
-                                    <div>151 kcal</div>
-                                    <div>15 g</div>
-                                    <div>1 g</div>
-                                    <div>3 g</div>
-                                    <div class="font-size-12 color-lightgray">Energy</div>
-                                    <div class="font-size-12 color-lightgray">Fat</div>
-                                    <div class="font-size-12 color-lightgray">Carbohydydrate</div>
-                                    <div class="font-size-12 color-lightgray">Protein</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cart create" data-bs-toggle="modal" data-bs-target="#create">
-                            <p><i class="fa-solid fa-database"></i> Create food</p>
-                        </div>
-                        <!-- Pagination -->
-                        <nav aria-label="Page navigation" class="mt-4">
-                            <ul class="pagination justify-content-end">
-                                <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">»</a></li>
-                            </ul>
-                        </nav>
+            </nav>
+
+            <div id="banner">
+                <p>Food databases</p>
+                <small>Create, check and update foods that you can use on meal plans</small>
+            </div>
+            <div class="container p-1 bg-white rounded">
+                <div class="container mt-4 p-0">
+                    <div>
+                        <h4>Foods</h4>
+                        <small class="text-muted">Search, consult and add new foods to the system</small>
                     </div>
+                    <div class="d-flex gap-5 align-items-center mb-3">
+                        <div>
+                            <input id="search" type="text" class="form-control" placeholder="Search Food">
+                        </div>
+                        <div id="sort" class="d-flex align-items-center">
+                            <i class="fa-solid fa-arrow-up-short-wide border p-2 rounded bg-white"></i>
+                            <select class="form-select">
+                                <option selected>Sort by nutrient</option>
+                                <option>Energy</option>
+                                <option>Fat</option>
+                                <option>Carbohydrate</option>
+                                <option>Protein</option>
+                            </select>
+                        </div>
+                        <div id="category">
+                            <select class="form-select">
+                                <option selected>All Category</option>
+                                <option>Desserts</option>
+                                <option>Breakfast and snack</option>
+                                <option>Appetizers and side dishes</option>
+                                <option>Soups</option>
+                                <option>Meat dishes</option>
+                                <option>Fish dishes</option>
+                                <option>Vegetarian dishes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--DATA-->
+                    <div id="data" class="data">
+
+                    </div>
+                    <div class="cart create" data-bs-toggle="modal" data-bs-target="#create">
+                        <p><i class="fa-solid fa-database"></i> Create food</p>
+                    </div>
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item disabled"><a class="page-link" href="#">«</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">»</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -254,246 +109,8 @@
     <div class="modal fade" id="information" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog custom-width-modal">
             <div class="modal-content">
-                <div class="modal-body">
-                    <h3 class="text-center color-gray">Food information</h3>
-                    <p class="subtitle text-center">Check and update the information about the food</p>
+                <div id="infoFood" class="modal-body">
 
-                    <div class="food-info-grid color-gray">
-                        <div class="info-block">
-                            <div class="label flex-1">Name</div>
-                            <div class="value">Ackee, canned, drained</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Source</div>
-                            <div class="value">McCance and Widdowson's</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Category</div>
-                            <div class="value">Vegetables and Vegetable Products</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Quantity</div>
-                            <div class="value">100</div>
-                            <div class="label">grams</div>
-                        </div>
-                    </div>
-
-                    <div class="nutrition-box text-center">
-                        Nutritional value per 100 g
-                    </div>
-                    <br>
-                    <h4 class="text-center color-gray">Macronutrients</h4>
-                    <div class="macrronutrients-grid color-gray">
-                        <div class="info-block">
-                            <div class="label flex-1">Energy</div>
-                            <div class="value">151.0</div>
-                            <div class="label">kcal</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Fat</div>
-                            <div class="value">12.5</div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Carbohydrate</div>
-                            <div class="value">0.8</div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Protein</div>
-                            <div class="value">2.9</div>
-                            <div class="label">g</div>
-                        </div>
-                    </div>
-                    <br>
-                    <h4 class="text-center color-gray">Micronutrients</h4>
-                    <div class="micronutrients-grid color-gray">
-                        <div class="info-block">
-                            <div class="label flex-1">Cholesterol</div>
-                            <div class="value">0.0</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Fiber</div>
-                            <div class="value"></div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Sodium</div>
-                            <div class="value">240.0</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Water</div>
-                            <div class="value">76.7</div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Vitamin A</div>
-                            <div class="value"></div>
-                            <div class="label">µg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Vitamin B-6</div>
-                            <div class="value">0.06</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Vitamin B-12</div>
-                            <div class="value">0.0</div>
-                            <div class="label">µg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Vitamin C</div>
-                            <div class="value">30.0</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Vitamin D (D2 + D3)</div>
-                            <div class="value">0.0</div>
-                            <div class="label">µg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Vitamin E</div>
-                            <div class="value"></div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Vitamin K</div>
-                            <div class="value"></div>
-                            <div class="label">µg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Starch</div>
-                            <div class="value">0.0</div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Lactose</div>
-                            <div class="value">0.0</div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Alcohol</div>
-                            <div class="value"></div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Caffeine</div>
-                            <div class="value"></div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Sugars</div>
-                            <div class="value">0.8</div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Calcium</div>
-                            <div class="value">35.0</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Iron</div>
-                            <div class="value">0.7</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Magnesium</div>
-                            <div class="value">40.0</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Phosphorus</div>
-                            <div class="value">47.0</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Potassium</div>
-                            <div class="value">270.0</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Zinc</div>
-                            <div class="value">0.6</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Copper</div>
-                            <div class="value">0.27</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Fluoride</div>
-                            <div class="value"></div>
-                            <div class="label">µg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Manganese</div>
-                            <div class="value"></div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Selenium</div>
-                            <div class="value"></div>
-                            <div class="label">µg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Thiamin</div>
-                            <div class="value">0.03</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Riboflavin</div>
-                            <div class="value">0.07</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Niacin</div>
-                            <div class="value">0.6</div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Pantothenic acid</div>
-                            <div class="value"></div>
-                            <div class="label">mg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Folate, total</div>
-                            <div class="value">41.0</div>
-                            <div class="label">µg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Folic acid</div>
-                            <div class="value"></div>
-                            <div class="label">µg</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Fatty acids, total trans</div>
-                            <div class="value">0.0</div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Fatty acids, total saturated</div>
-                            <div class="value"></div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Fatty acids, total monounsaturated</div>
-                            <div class="value"></div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Fatty acids, total polyunsaturated</div>
-                            <div class="value"></div>
-                            <div class="label">g</div>
-                        </div>
-                        <div class="info-block">
-                            <div class="label flex-1">Chloride</div>
-                            <div class="value">340.0</div>
-                            <div class="label">mg</div>
-                        </div>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-white border" data-bs-dismiss="modal">Close</button>
@@ -503,7 +120,7 @@
         </div>
     </div>
 
-    <!-- Modal  INFORMATION-->
+    <!-- Modal  create-->
     <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog custom-width-modal">
             <div class="modal-content">
@@ -756,12 +373,12 @@
         </div>
     </div>
 
+    <script src="../js/food.js"></script>
     <script src="https://kit.fontawesome.com/044cb39f80.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
     <script src="../js/sidebar.js"></script>
-    <script src="../js/food.js"></script>
 </body>
 
 </html>

@@ -18,6 +18,7 @@ submit.addEventListener("click", function(e){
     let password = document.getElementById("password").value.trim();
 
     if (email === account.email && password === account.password) {
+        sessionStorage.setItem("loginSuccess","true")
         location.href="../pages/home-page.html"
     } else {
     //Show Error Toast
