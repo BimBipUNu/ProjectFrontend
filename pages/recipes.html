@@ -50,10 +50,49 @@
                 <p>Recipes</p>
                 <p class="moreTitle">Create, check and update recipes</p>
             </div>
-            <div class="container p-0 bg-white rounded">
-                <!--DATA-->
-                <div id="content">
+            <div class="container p-1 bg-white rounded">
+                <div class="container mt-4 p-0">
+                    <div>
+                        <h4>Recipes</h4>
+                        <small class="text-muted">Search, consult and add new foods to the system</small>
+                    </div>
+                    <div class="d-flex gap-5 align-items-center mb-3">
+                        <div>
+                            <input id="search" type="text" class="form-control" placeholder="Search Food">
+                        </div>
+                        <div id="sort" class="d-flex align-items-center">
+                            <div id="sortDirection"><i class="fa-solid fa-arrow-up border p-2 rounded"></i></div>
+                            <select class="form-select">
+                                <option selected>Sort by nutrient</option>
+                                <option>Energy</option>
+                                <option>Fat</option>
+                                <option>Carbohydrate</option>
+                                <option>Protein</option>
+                            </select>
+                        </div>
+                        <div id="category">
+                            <select class="form-select">
+                                <option selected>All Category</option>
+                                <option>Desserts</option>
+                                <option>Breakfast and snack</option>
+                                <option>Appetizers and side dishes</option>
+                                <option>Soups</option>
+                                <option>Meat dishes</option>
+                                <option>Fish dishes</option>
+                                <option>Vegetarian dishes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--DATA-->
+                    <div id="data" class="data">
 
+                    </div>
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul id="pagination" class="pagination justify-content-end">
+
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -63,6 +102,7 @@
             integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
             crossorigin="anonymous"></script>
         <script src="../js/sidebar.js"></script>
+        <script src="../js/functions-for-recipe.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="../js/recipes.js"></script>
 </body>

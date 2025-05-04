@@ -33,14 +33,13 @@ body {
 }
 .data {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 .card {
     display: flex;
     flex-direction: row;
-    gap: 57px;
-    width: calc(565 / 16*1rem);
+    width: calc(500 / 16*1rem);
     height: calc(220 / 16*1rem);
     margin-bottom: 31px;
 }

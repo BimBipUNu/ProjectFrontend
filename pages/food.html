@@ -61,7 +61,7 @@
                             <input id="search" type="text" class="form-control" placeholder="Search Food">
                         </div>
                         <div id="sort" class="d-flex align-items-center">
-                            <i class="fa-solid fa-arrow-up-short-wide border p-2 rounded bg-white"></i>
+                            <div id="sortDirection"><i class="fa-solid fa-arrow-up border p-2 rounded"></i></div>
                             <select class="form-select">
                                 <option selected>Sort by nutrient</option>
                                 <option>Energy</option>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-white border" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Save changes</button>
+                    <button id="updateBtn" type="button" class="btn btn-success d-none" data-bs-dismiss="modal">Update</button>
                 </div>
             </div>
         </div>
@@ -131,19 +131,27 @@
                     <div class="food-info-grid color-gray">
                         <div class="info-block">
                             <div class="label flex-1">Name</div>
-                            <div class="value"></div>
+                            <input id="nameCreate" type="text" class="value form-control">
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Source</div>
-                            <div class="value">My foods</div>
+                            <input id="sourceCreate" type="text" class="value form-control">
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Category</div>
-                            <div class="value">Select the food group</div>
+                            <select id="categoryCreate" class="form-select">
+                                <option>Desserts</option>
+                                <option>Breakfast and snack</option>
+                                <option>Appetizers and side dishes</option>
+                                <option>Soups</option>
+                                <option>Meat dishes</option>
+                                <option>Fish dishes</option>
+                                <option>Vegetarian dishes</option>
+                            </select>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Quantity</div>
-                            <div class="value">100</div>
+                            <input id="quantityCreate" type="number" value="100" min="100" class="value form-control">
                             <div class="label">grams</div>
                         </div>
                     </div>
@@ -156,22 +164,22 @@
                     <div class="macrronutrients-grid color-gray">
                         <div class="info-block">
                             <div class="label flex-1">Energy</div>
-                            <div class="value"></div>
+                            <input id="energyCreate" type="number" min="0" class="value form-control">
                             <div class="label">kcal</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Fat</div>
-                            <div class="value"></div>
+                            <input id="fatCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Carbohydrate</div>
-                            <div class="value"></div>
+                            <input id="carbohydrateCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Protein</div>
-                            <div class="value"></div>
+                            <input id="proteinCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                     </div>
@@ -180,198 +188,200 @@
                     <div class="micronutrients-grid color-gray">
                         <div class="info-block">
                             <div class="label flex-1">Cholesterol</div>
-                            <div class="value"></div>
+                            <input id="cholesterolCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Fiber</div>
-                            <div class="value"></div>
+                            <input id="fiberCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Sodium</div>
-                            <div class="value"></div>
+                            <input id="sodiumCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Water</div>
-                            <div class="value"></div>
+                            <input id="waterCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Vitamin A</div>
-                            <div class="value"></div>
+                            <input id="vitaminACreate" type="number" min="0" class="value form-control">
                             <div class="label">µg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Vitamin B-6</div>
-                            <div class="value"></div>
+                            <input id="vitaminB6Create" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Vitamin B-12</div>
-                            <div class="value"></div>
+                            <input id="vitaminB12Create" type="number" min="0" class="value form-control">
                             <div class="label">µg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Vitamin C</div>
-                            <div class="value"></div>
+                            <input id="vitaminCCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Vitamin D (D2 + D3)</div>
-                            <div class="value"></div>
+                            <input id="vitaminDCreate" type="number" min="0" class="value form-control">
                             <div class="label">µg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Vitamin E</div>
-                            <div class="value"></div>
+                            <input id="vitaminECreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Vitamin K</div>
-                            <div class="value"></div>
+                            <input id="vitaminKCreate" type="number" min="0" class="value form-control">
                             <div class="label">µg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Starch</div>
-                            <div class="value"></div>
+                            <input id="starchCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Lactose</div>
-                            <div class="value"></div>
+                            <input id="lactoseCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Alcohol</div>
-                            <div class="value"></div>
+                            <input id="alcoholCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Caffeine</div>
-                            <div class="value"></div>
+                            <input id="caffeineCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Sugars</div>
-                            <div class="value"></div>
+                            <input id="sugarsCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Calcium</div>
-                            <div class="value"></div>
+                            <input id="calciumCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Iron</div>
-                            <div class="value"></div>
+                            <input id="ironCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Magnesium</div>
-                            <div class="value"></div>
+                            <input id="magnesiumCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Phosphorus</div>
-                            <div class="value"></div>
+                            <input id="phosphorusCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Potassium</div>
-                            <div class="value"></div>
+                            <input id="potassiumCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Zinc</div>
-                            <div class="value"></div>
+                            <input id="zincCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Copper</div>
-                            <div class="value"></div>
+                            <input id="copperCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Fluoride</div>
-                            <div class="value"></div>
+                            <input id="fluorideCreate" type="number" min="0" class="value form-control">
                             <div class="label">µg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Manganese</div>
-                            <div class="value"></div>
+                            <input id="manganeseCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Selenium</div>
-                            <div class="value"></div>
+                            <input id="seleniumCreate" type="number" min="0" class="value form-control">
                             <div class="label">µg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Thiamin</div>
-                            <div class="value"></div>
+                            <input id="thiaminCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Riboflavin</div>
-                            <div class="value"></div>
+                            <input id="riboflavinCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Niacin</div>
-                            <div class="value"></div>
+                            <input id="niacinCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Pantothenic acid</div>
-                            <div class="value"></div>
+                            <input id="pantothenicAcidCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Folate, total</div>
-                            <div class="value"></div>
+                            <input id="folateTotalCreate" type="number" min="0" class="value form-control">
                             <div class="label">µg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Folic acid</div>
-                            <div class="value"></div>
+                            <input id=folicAcidCreate type="number" min="0" class="value form-control">
                             <div class="label">µg</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Fatty acids, total trans</div>
-                            <div class="value"></div>
+                            <input id="fattyAcidsTransCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Fatty acids, total saturated</div>
-                            <div class="value"></div>
+                            <input id="fattyAcidsSaturatedCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Fatty acids, total monounsaturated</div>
-                            <div class="value"></div>
+                            <input id="fattyAcidsMonounsaturatedCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Fatty acids, total polyunsaturated</div>
-                            <div class="value"></div>
+                            <input id="fattyAcidsPolyunsaturatedCreate" type="number" min="0" class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Chloride</div>
-                            <div class="value"></div>
+                            <input id="chlorideCreate" type="number" min="0" class="value form-control">
                             <div class="label">mg</div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-white border" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Save changes</button>
+                    <button id="closeCreate" type="button" class="btn btn-white border" data-bs-dismiss="modal">Close</button>
+                    <button id="createBtn" type="button" class="btn btn-success">Create</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="toastContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 1055;"></div>
 
     <script src="../js/food.js"></script>
     <script src="https://kit.fontawesome.com/044cb39f80.js" crossorigin="anonymous"></script>

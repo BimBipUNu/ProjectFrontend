@@ -9,19 +9,28 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 let sidebarClosed = false;
+let lastScrollX = window.scrollX;  // Lưu vị trí scroll ngang ban đầu
+
 window.addEventListener('scroll', () => {
-    if (!sidebarCol.classList.contains('collapsed') && !sidebarClosed) {
-        sidebarCol.classList.add('collapsed');
-        mainContent.classList.remove('mleft-custom');
-        mainContent.classList.add('mleft-0');
-        sidebarClosed = true;
+    const currentScrollX = window.scrollX;
+
+    if (currentScrollX !== lastScrollX) {
+        // CHỈ khi scroll ngang mới làm
+        if (!sidebarCol.classList.contains('collapsed') && !sidebarClosed) {
+            sidebarCol.classList.add('collapsed');
+            mainContent.classList.remove('mleft-custom');
+            mainContent.classList.add('mleft-0');
+            sidebarClosed = true;
+        }
     }
+
+    lastScrollX = currentScrollX; // Cập nhật lại vị trí scrollX mới
 });
 
 toggleBtn.addEventListener('click', () => {
     sidebarCol.classList.toggle('collapsed');
     mainContent.classList.toggle('mleft-0');
     mainContent.classList.toggle('mleft-custom');
-    
+
     sidebarClosed = sidebarCol.classList.contains('collapsed');
 });

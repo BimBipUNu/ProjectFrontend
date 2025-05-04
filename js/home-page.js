@@ -5,3 +5,4 @@ if (sessionStorage.getItem("loginSuccess")) {
 
     sessionStorage.removeItem("loginSuccess");
 }
+renderDashboard();
