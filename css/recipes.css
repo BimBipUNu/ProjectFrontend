@@ -240,3 +240,12 @@ body {
 .handleRecipe{
     background-color: #f3f3f4;
 }
+.imgRecipe{
+    position: absolute;
+    right: 25%;
+    top: 25%;
+}
+.containerImg{
+    position: absolute;
+    top : 10%;
+}

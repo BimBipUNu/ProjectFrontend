@@ -41,52 +41,52 @@ localStorage.setItem("users",JSON.stringify(usersData));
 const recipeCategoryData = [
     {
         "id": 1,
-        "name": "vegetarian",
+        "name": "Vegetarian",
         "description": "Dishes that do not include meat, fish, or poultry, suitable for vegetarians."
     },
     {
         "id": 2,
-        "name": "appetizer",
+        "name": "Appetizer",
         "description": "Small dishes served before the main course to stimulate the appetite."
     },
     {
         "id": 3,
-        "name": "vegan",
+        "name": "Vegan",
         "description": "Plant-based recipes with no animal products, including dairy and eggs."
     },
     {
         "id": 4,
-        "name": "main course",
+        "name": "Main course",
         "description": "The main dish in a meal, often more substantial and filling."
     },
     {
         "id": 5,
-        "name": "dessert",
+        "name": "Dessert",
         "description": "Sweet dishes typically served at the end of a meal."
     },
     {
         "id": 6,
-        "name": "low-carb",
+        "name": "Low-carb",
         "description": "Recipes with reduced carbohydrate content, often for weight or sugar control."
     },
     {
         "id": 7,
-        "name": "gluten-free",
+        "name": "Gluten-free",
         "description": "Meals made without gluten, suitable for those with gluten intolerance."
     },
     {
         "id": 8,
-        "name": "breakfast",
+        "name": "Breakfast",
         "description": "Recipes designed for the first meal of the day."
     },
     {
         "id": 9,
-        "name": "salad",
+        "name": "Salad",
         "description": "Cold or warm dishes primarily composed of vegetables, fruits, and other ingredients."
     },
     {
         "id": 10,
-        "name": "soup",
+        "name": "Soup",
         "description": "Liquid-based dishes, either hot or cold, made with a variety of ingredients."
     }
 ]
@@ -123,7 +123,7 @@ const recipeData = [
       "category": [
         {
           "id": 1,
-          "name": "vegetarian"
+          "name": "Vegetarian"
         },
         {
           "id": 2,
@@ -161,7 +161,7 @@ const recipeData = [
       "category": [
         {
           "id": 4,
-          "name": "main course"
+          "name": "Main course"
         }
       ]
     },
@@ -191,7 +191,7 @@ const recipeData = [
       "category": [
         {
           "id": 4,
-          "name": "sample category"
+          "name": "Main course"
         }
       ]
     },
@@ -221,7 +221,7 @@ const recipeData = [
       "category": [
         {
           "id": 5,
-          "name": "sample category"
+          "name": "Dessert"
         }
       ]
     },
@@ -251,7 +251,7 @@ const recipeData = [
       "category": [
         {
           "id": 6,
-          "name": "sample category"
+          "name": "Low-carb"
         }
       ]
     },
@@ -281,7 +281,7 @@ const recipeData = [
       "category": [
         {
           "id": 7,
-          "name": "sample category"
+          "name": "Gluten-free"
         }
       ]
     },
@@ -311,7 +311,7 @@ const recipeData = [
       "category": [
         {
           "id": 8,
-          "name": "sample category"
+          "name": "Breakfast"
         }
       ]
     },
@@ -341,7 +341,7 @@ const recipeData = [
       "category": [
         {
           "id": 9,
-          "name": "sample category"
+          "name": "Salad"
         }
       ]
     },
@@ -371,7 +371,7 @@ const recipeData = [
       "category": [
         {
           "id": 10,
-          "name": "sample category"
+          "name": "Soup"
         }
       ]
     },
@@ -401,7 +401,7 @@ const recipeData = [
       "category": [
         {
           "id": 1,
-          "name": "sample category"
+          "name": "Vegetarian"
         }
       ]
     },
@@ -430,8 +430,8 @@ const recipeData = [
       ],
       "category": [
         {
-          "id": 2,
-          "name": "sample category"
+          "id": 1,
+          "name": "Vegetarian"
         }
       ]
     },
@@ -460,8 +460,8 @@ const recipeData = [
       ],
       "category": [
         {
-          "id": 3,
-          "name": "sample category"
+          "id": 1,
+          "name": "Vegetarian"
         }
       ]
     },
@@ -490,8 +490,8 @@ const recipeData = [
       ],
       "category": [
         {
-          "id": 4,
-          "name": "sample category"
+          "id": 1,
+          "name": "Vegetarian"
         }
       ]
     },
@@ -520,8 +520,8 @@ const recipeData = [
       ],
       "category": [
         {
-          "id": 5,
-          "name": "sample category"
+          "id": 1,
+          "name": "Vegetarian"
         }
       ]
     },
@@ -550,8 +550,8 @@ const recipeData = [
       ],
       "category": [
         {
-          "id": 6,
-          "name": "sample category"
+          "id": 1,
+          "name": "Vegetarian"
         }
       ]
     },
@@ -580,8 +580,8 @@ const recipeData = [
       ],
       "category": [
         {
-          "id": 7,
-          "name": "sample category"
+          "id": 1,
+          "name": "Vegetarian"
         }
       ]
     },
@@ -610,8 +610,8 @@ const recipeData = [
       ],
       "category": [
         {
-          "id": 8,
-          "name": "sample category"
+          "id": 1,
+          "name": "Vegetarian"
         }
       ]
     },
@@ -640,8 +640,8 @@ const recipeData = [
       ],
       "category": [
         {
-          "id": 9,
-          "name": "sample category"
+          "id": 1,
+          "name": "Vegetarian"
         }
       ]
     },
@@ -670,8 +670,8 @@ const recipeData = [
       ],
       "category": [
         {
-          "id": 10,
-          "name": "sample category"
+          "id": 1,
+          "name": "Vegetarian"
         }
       ]
     },
@@ -701,7 +701,7 @@ const recipeData = [
       "category": [
         {
           "id": 1,
-          "name": "sample category"
+          "name": "Vegetarian"
         }
       ]
     }

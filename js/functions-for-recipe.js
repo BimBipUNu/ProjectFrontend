@@ -7,14 +7,14 @@ const categorySelect = document.querySelector("#category select");
 const pagination = document.getElementById("pagination");
 
 const foods = JSON.parse(localStorage.getItem("foods")) || [];
-let currentRecipes = [...recipe];
-let currentData = [...recipe]; // Dữ liệu hiện tại (có thể là recipe hoặc dữ liệu khác)
+let filteredRecipes = [...recipe];
+let currentData = [...recipe]; // Dữ liệu hiện tại
 let currentPage = 1;
 const itemsPerPage = 6;
-let isAscending = true; // Hướng sắp xếp (tăng dần hoặc giảm dần)
+let isAscending = true;
 
 // Enrich Recipes
-const enrichRecipes = (recipes) => {
+const enrichRecipesData = (recipes) => {
     return recipes.map(item => {
         let energy = 0, fat = 0, carbs = 0, protein = 0;
         item.ingredients.forEach(ingredient => {
@@ -31,9 +31,10 @@ const enrichRecipes = (recipes) => {
 }
 // Render Dashboard
 const renderDashboard = () => {
-    let recipesToRender = enrichRecipes(currentRecipes);
+    let recipesToRender = enrichRecipesData(filteredRecipes);
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
+    // const currentRecipes = filteredRecipes.slice(start, end);
     recipesToRender = recipesToRender.slice(start, end);
 
     let html = "";
@@ -42,6 +43,7 @@ const renderDashboard = () => {
         <div class="card" onclick="renderDetail(${item.id})">
             <div>
                 <p class="community"><i class="fa-solid fa-people-group"></i> Community Recipes</p>
+                <img src="../assets/icons/logo.jpg" width="150" height="150" alt="test">
             </div>
             <div class="description">
                 <p>${item.name}</p>
@@ -60,69 +62,88 @@ const renderDashboard = () => {
                     <div class="itemGrid">Protein</div>
 
                     <div class="itemGrid">100g</div>
-                    <div class="itemGrid">${item.energy.toFixed(0)} kcal</div>
-                    <div class="itemGrid">${item.fat.toFixed(1)} g</div>
-                    <div class="itemGrid">${item.carbs.toFixed(1)} g</div>
-                    <div class="itemGrid">${item.protein.toFixed(1)} g</div>
+                        <div class="itemGrid">${item.energy ? item.energy.toFixed(0) : "0"} kcal</div>
+                        <div class="itemGrid">${item.fat ? item.fat.toFixed(1) : "0"} g</div>
+                        <div class="itemGrid">${item.carbs ? item.carbs.toFixed(1) : "0"} g</div>
+                        <div class="itemGrid">${item.protein ? item.protein.toFixed(1) : "0"} g</div>
                 </div>
             </div>
         </div>
         `;
     });
     data.innerHTML = html;
-    renderPagination(currentRecipes.length);
+    renderPagination(filteredRecipes.length);
 }
 
-// Hàm xử lý chung cho tìm kiếm, lọc, sắp xếp và phân trang
-const processData = (dataSource, renderFunction) => {
-    let filteredData = [...dataSource];
+const enrichRecipes = (recipes) => {
+    return recipes.map(recipe => {
+        let energy = 0, fat = 0, carbs = 0, protein = 0;
 
-    // Lọc theo danh mục
-    const categoryValue = categorySelect?.value;
-    if (categoryValue && categoryValue !== "All Category") {
-        filteredData = filteredData.filter(item =>
-            item.category.toLowerCase().includes(categoryValue.toLowerCase())
-        );
+        // Tính toán thông tin dinh dưỡng từ foods
+        recipe.ingredients.forEach(ingredient => {
+            const food = foods.find(f => f.id === ingredient.id);
+            if (food && food.macronutrients) {
+                energy += food.macronutrients.energy || 0;
+                fat += food.macronutrients.fat || 0;
+                carbs += food.macronutrients.carbohydrate || 0;
+                protein += food.macronutrients.protein || 0;
+            }
+        });
+
+        // Trả về recipe với thông tin dinh dưỡng đã được tính toán
+        return {
+            ...recipe,
+            macronutrients: {
+                energy,
+                fat,
+                carbohydrate: carbs,
+                protein
+            }
+        };
+    });
+};
+// Hàm xử lý chung cho tìm kiếm, lọc, sắp xếp và phân trang
+const processData = () => {
+    filteredRecipes = enrichRecipes([...recipe]);
+
+    const categoryValue = categorySelect.value;// Lọc theo category
+    if (categoryValue !== "All Category") {
+        filteredRecipes = filteredRecipes.filter(f => f.category[0].name.toLowerCase().includes(categoryValue.toLowerCase()));
     }
 
     // Tìm kiếm theo từ khóa
-    const keyword = searchInput?.value.toLowerCase();
+    const keyword = searchInput.value.toLowerCase().trim();
     if (keyword) {
-        filteredData = filteredData.filter(item =>
+        filteredRecipes = filteredRecipes.filter(item =>
             item.name.toLowerCase().includes(keyword)
         );
     }
 
     // Sắp xếp theo nutrient
-    const sortValue = sortSelect?.value;
+    const sortValue = sortSelect.value;
     if (sortValue === "Energy") {
-        filteredData.sort((a, b) =>
-            isAscending ? a.energy - b.energy : b.energy - a.energy
-        );
+        filteredRecipes.sort((a, b) => isAscending ? a.macronutrients.energy - b.macronutrients.energy : b.macronutrients.energy - a.macronutrients.energy);
     } else if (sortValue === "Fat") {
-        filteredData.sort((a, b) =>
-            isAscending ? a.fat - b.fat : b.fat - a.fat
-        );
+        filteredRecipes.sort((a, b) => isAscending ? a.macronutrients.fat - b.macronutrients.fat : b.macronutrients.fat - a.macronutrients.fat);
     } else if (sortValue === "Carbohydrate") {
-        filteredData.sort((a, b) =>
-            isAscending ? a.carbohydrate - b.carbohydrate : b.carbohydrate - a.carbohydrate
-        );
+        filteredRecipes.sort((a, b) => isAscending ? a.macronutrients.carbohydrate - b.macronutrients.carbohydrate : b.macronutrients.carbohydrate - a.macronutrients.carbohydrate);
     } else if (sortValue === "Protein") {
-        filteredData.sort((a, b) =>
-            isAscending ? a.protein - b.protein : b.protein - a.protein
-        );
+        filteredRecipes.sort((a, b) => isAscending ? a.macronutrients.protein - b.macronutrients.protein : b.macronutrients.protein - a.macronutrients.protein);
     }
 
-    // Phân trang
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const paginatedData = filteredData.slice(start, end);
+    // // Phân trang
+    // const start = (currentPage - 1) * itemsPerPage;
+    // const end = start + itemsPerPage;
+    // const paginatedData = filteredData.slice(start, end);
 
-    // Gọi hàm render để hiển thị dữ liệu
-    renderFunction(paginatedData);
+    // // Gọi hàm render để hiển thị dữ liệu
+    // renderFunction(paginatedData);
 
-    // Hiển thị phân trang
-    renderPagination(filteredData.length);
+    // // Hiển thị phân trang
+    // renderPagination(filteredData.length);
+
+    currentPage = 1;
+    renderDashboard();
 };
 
 // Hàm hiển thị phân trang
@@ -155,21 +176,21 @@ const renderPagination = (totalItems) => {
 function changePage(page) {
     if (page < 1 || page > Math.ceil(currentData.length / itemsPerPage)) return;
     currentPage = page;
-    processData(currentData, renderDashboard); // Gọi lại processData với dữ liệu hiện tại
+    renderDashboard();
 }
 
 // Sự kiện tìm kiếm
-searchInput?.addEventListener("input", () => {
-    processData(currentData, renderDashboard);
+searchInput.addEventListener("input", () => {
+    processData();
 });
 
 // Sự kiện sắp xếp
-sortSelect?.addEventListener("change", () => {
-    processData(currentData, renderDashboard);
+sortSelect.addEventListener("change", () => {
+    processData();
 });
 
 // Sự kiện thay đổi hướng sắp xếp
-document.getElementById("sortDirection")?.addEventListener("click", () => {
+document.getElementById("sortDirection").addEventListener("click", () => {
     isAscending = !isAscending;
     const icon = document.getElementById("sortDirection").querySelector("i");
     if (isAscending) {
@@ -179,17 +200,17 @@ document.getElementById("sortDirection")?.addEventListener("click", () => {
         icon.classList.remove("fa-arrow-up");
         icon.classList.add("fa-arrow-down");
     }
-    processData(currentData, renderDashboard);
+    processData();
 });
 
 // Sự kiện lọc theo danh mục
-categorySelect?.addEventListener("change", () => {
-    processData(currentData, renderDashboard);
+categorySelect.addEventListener("change", () => {
+    processData();
 });
 
 //Tải trang Chi tiết
 const renderDetail = (id) => {
-    const recipe = currentRecipes.find(item => item.id === id);
+    const recipe = filteredRecipes.find(item => item.id === id);
     // Tính toán thông tin dinh dưỡng từ foods
     const enrichedIngredients = recipe.ingredients.map(ingredient => {
         const food = foods.find(f => f.id === ingredient.id);
@@ -339,15 +360,16 @@ const renderDetail = (id) => {
                                 <div class="d-flex align-items-center justify-content-around">
                                     <p class="community w-auto"><i class="fa-solid fa-people-group"></i> Community Recipes</p>
                                     <button class="customBtnLikes"><span><i class="fa-regular fa-heart"></i></span> 37</button>
+                                    <img class="imgRecipe" src="../assets/icons/logo.jpg" width="150" height="150" alt="test">
                                     <p class="ticket position-absolute bottom-0">
                                         <i class="fa-solid fa-location-pin fa-rotate-270" style="color: #ea9f77;" aria-hidden="true"></i>
-                                        <span class="category">${recipe.category[0]?.name || "Unknown"}</span>
+                                        <span class="category">${recipe.category[0].name || "Unknown"}</span>
                                     </p>
                                 </div>
                             </div>
                             <div class="basicInformation p-3">
-                                <p class="title">Basic information</h5>
-                                <p class="moreTitle">Check and edit recipe's basic information</span>
+                                <p class="title">Basic information</pp>
+                                <p class="moreTitle">Check and edit recipe's basic information</pp>
                                 <div class="table">
                                     <div class="label p-2">Name</div>
                                     <div class="value p-2">${recipe.name}</div>
@@ -529,7 +551,7 @@ const renderDetail = (id) => {
                                 </div>
                             </div>
                         </div>`
-    // Biểu đồ (Đang fix cứng)
+    // Biểu đồ
     const ctx = document.getElementById('macrosChart').getContext('2d');
     const macrosChart = new Chart(ctx, {
         type: 'pie',
