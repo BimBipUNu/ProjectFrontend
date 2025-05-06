@@ -34,3 +34,20 @@ toggleBtn.addEventListener('click', () => {
 
     sidebarClosed = sidebarCol.classList.contains('collapsed');
 });
+
+// Hiển thị modal khi nhấn vào nút "Sign out"
+document.querySelector(".signout").addEventListener("click", function (e) {
+    e.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+
+    const signOutModal = new bootstrap.Modal(document.getElementById("signOutModal"));
+    signOutModal.show();
+});
+// Xử lý khi người dùng xác nhận đăng xuất
+document.getElementById("confirmSignOut").addEventListener("click", function () {
+    // Xóa thông tin đăng nhập khỏi localStorage và sessionStorage
+    localStorage.removeItem("loggedInUsername");
+    sessionStorage.removeItem("loginSuccess");
+
+    // Chuyển hướng về trang đăng nhập
+    window.location.href = "../pages/login.html";
+});

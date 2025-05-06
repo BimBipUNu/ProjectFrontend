@@ -42,7 +42,7 @@
             <nav class="navbar navbar-dark mb-4">
                 <div class="container-fluid">
                     <button class="toggle-btn" id="toggleBtn">☰</button>
-                    <span>Tài Trần</span>
+                    <span id="usernameLog"></span>
                 </div>
             </nav>
 
@@ -114,7 +114,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-white border" data-bs-dismiss="modal">Close</button>
-                    <button id="updateBtn" type="button" class="btn btn-success d-none" data-bs-dismiss="modal">Update</button>
+                    <button id="updateBtn" type="button" class="btn btn-success d-none"
+                        data-bs-dismiss="modal">Update</button>
                 </div>
             </div>
         </div>
@@ -358,12 +359,14 @@
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Fatty acids, total monounsaturated</div>
-                            <input id="fattyAcidsMonounsaturatedCreate" type="number" min="0" class="value form-control">
+                            <input id="fattyAcidsMonounsaturatedCreate" type="number" min="0"
+                                class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
                             <div class="label flex-1">Fatty acids, total polyunsaturated</div>
-                            <input id="fattyAcidsPolyunsaturatedCreate" type="number" min="0" class="value form-control">
+                            <input id="fattyAcidsPolyunsaturatedCreate" type="number" min="0"
+                                class="value form-control">
                             <div class="label">g</div>
                         </div>
                         <div class="info-block">
@@ -374,8 +377,27 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button id="closeCreate" type="button" class="btn btn-white border" data-bs-dismiss="modal">Close</button>
+                    <button id="closeCreate" type="button" class="btn btn-white border"
+                        data-bs-dismiss="modal">Close</button>
                     <button id="createBtn" type="button" class="btn btn-success">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal xác nhận đăng xuất -->
+    <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="signOutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signOutModalLabel">Xác nhận đăng xuất</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn đăng xuất không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button id="confirmSignOut" type="button" class="btn btn-danger">Đăng xuất</button>
                 </div>
             </div>
         </div>

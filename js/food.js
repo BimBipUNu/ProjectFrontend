@@ -1,3 +1,14 @@
+//Hiển thị tên đăng nhập
+window.addEventListener("load", function () {
+    const username = localStorage.getItem("loggedInUsername");
+    if (username) {
+        const usernameLog = document.getElementById("usernameLog");
+        if (usernameLog) {
+            usernameLog.innerText = username;
+        }
+    }
+});
+
 let foods = JSON.parse(localStorage.getItem('foods')) || [];
 let data = document.getElementById("data");
 let infoFood = document.getElementById("infoFood");

@@ -42,7 +42,7 @@
             <nav class="navbar navbar-dark mb-4">
                 <div class="container-fluid">
                     <button class="toggle-btn" id="toggleBtn">☰</button>
-                    <span>Tài Trần</span>
+                    <span id="usernameLog"></span>
                 </div>
             </nav>
 
@@ -387,7 +387,24 @@
             </div>
         </div>
     </div>
-
+    <!-- Modal xác nhận đăng xuất -->
+    <div class="modal fade" id="signOutModal" tabindex="-1" aria-labelledby="signOutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signOutModalLabel">Xác nhận đăng xuất</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Bạn có chắc chắn muốn đăng xuất không?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button id="confirmSignOut" type="button" class="btn btn-danger">Đăng xuất</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="toastContainer" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055;"></div>
 
     <script src="https://kit.fontawesome.com/044cb39f80.js" crossorigin="anonymous"></script>
