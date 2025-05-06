@@ -43,7 +43,7 @@ const renderDashboard = () => {
         <div class="card" onclick="renderDetail(${item.id})">
             <div>
                 <p class="community"><i class="fa-solid fa-people-group"></i> Community Recipes</p>
-                <img src="../assets/icons/logo.jpg" width="150" height="150" alt="test">
+                <img src="${item.coverSrc}" width="150" height="150" alt="test">
             </div>
             <div class="description">
                 <p>${item.name}</p>
@@ -360,7 +360,7 @@ const renderDetail = (id) => {
                                 <div class="d-flex align-items-center justify-content-around">
                                     <p class="community w-auto"><i class="fa-solid fa-people-group"></i> Community Recipes</p>
                                     <button class="customBtnLikes"><span><i class="fa-regular fa-heart"></i></span> 37</button>
-                                    <img class="imgRecipe" src="../assets/icons/logo.jpg" width="150" height="150" alt="test">
+                                    <img class="imgRecipe" src="${recipe.coverSrc}" width="150" height="150" alt="test">
                                     <p class="ticket position-absolute bottom-0">
                                         <i class="fa-solid fa-location-pin fa-rotate-270" style="color: #ea9f77;" aria-hidden="true"></i>
                                         <span class="category">${recipe.category[0].name || "Unknown"}</span>
@@ -546,22 +546,23 @@ const renderDetail = (id) => {
                                 <p class="moreTitle">Give instructions to prepare this recipe</p>
                                 <div class="d-flex">
                                     <div class="label p-2 d-flex align-items-center">1</div>
-                                    <div class="value p-2">${recipe.cookingMethods[0].content}
+                                    <div class="value p-2">${recipe.cookingMethods}
                                     </div>
                                 </div>
                             </div>
                         </div>`
     // Biểu đồ
     const ctx = document.getElementById('macrosChart').getContext('2d');
+    let total = totalNutrients.fat + totalNutrients.carbs + totalNutrients.protein
     const macrosChart = new Chart(ctx, {
         type: 'pie',
         data: {
             labels: ['Fat', 'Carbohydrate', 'Protein'],
             datasets: [{
-                data: [totalNutrients.fat.toFixed(1),
-                totalNutrients.carbs.toFixed(1),
-                totalNutrients.protein.toFixed(1),
-                totalNutrients.fiber.toFixed(1)],
+                data: [
+                ((totalNutrients.fat / total) *100).toFixed(1),
+                ((totalNutrients.carbs / total) *100).toFixed(1),
+                ((totalNutrients.protein / total) *100).toFixed(1)],
                 backgroundColor: [
                     '#e4516c', // Fat
                     '#f4a261', // Carb

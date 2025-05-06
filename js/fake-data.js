@@ -114,12 +114,7 @@ const recipeData = [
           "name": "Broccoli, raw"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 1,
-          "content": "Grill the chicken and toss with broccoli and light dressing."
-        }
-      ],
+      "cookingMethods": "Grill the chicken and toss with broccoli and light dressing.",
       "category": [
         {
           "id": 1,
@@ -152,12 +147,7 @@ const recipeData = [
           "name": "Rice, white, cooked"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 2,
-          "content": "Bake the salmon and serve with steamed rice."
-        }
-      ],
+      "cookingMethods": "Bake the salmon and serve with steamed rice.",
       "category": [
         {
           "id": 4,
@@ -182,12 +172,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 3,
-          "content": "STEP 1: Sample method for recipe 3."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 3.",
       "category": [
         {
           "id": 4,
@@ -212,12 +197,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 4,
-          "content": "STEP 1: Sample method for recipe 4."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 4.",
       "category": [
         {
           "id": 5,
@@ -242,12 +222,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 5,
-          "content": "STEP 1: Sample method for recipe 5."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 5.",
       "category": [
         {
           "id": 6,
@@ -272,12 +247,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 6,
-          "content": "STEP 1: Sample method for recipe 6."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 6.",
       "category": [
         {
           "id": 7,
@@ -302,12 +272,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 7,
-          "content": "STEP 1: Sample method for recipe 7."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 7.",
       "category": [
         {
           "id": 8,
@@ -332,12 +297,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 8,
-          "content": "STEP 1: Sample method for recipe 8."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 8.",
       "category": [
         {
           "id": 9,
@@ -362,12 +322,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 9,
-          "content": "STEP 1: Sample method for recipe 9."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 9.",
       "category": [
         {
           "id": 10,
@@ -392,12 +347,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 10,
-          "content": "STEP 1: Sample method for recipe 10."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 10.",
       "category": [
         {
           "id": 1,
@@ -422,12 +372,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 11,
-          "content": "STEP 1: Sample method for recipe 11."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 11.",
       "category": [
         {
           "id": 1,
@@ -452,12 +397,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 12,
-          "content": "STEP 1: Sample method for recipe 12."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 12.",
       "category": [
         {
           "id": 1,
@@ -482,12 +422,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 13,
-          "content": "STEP 1: Sample method for recipe 13."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 13.",
       "category": [
         {
           "id": 1,
@@ -512,12 +447,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 14,
-          "content": "STEP 1: Sample method for recipe 14."
-        }
-      ],
+      "cookingMethods":"STEP 1: Sample method for recipe 14.",
       "category": [
         {
           "id": 1,
@@ -542,12 +472,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 15,
-          "content": "STEP 1: Sample method for recipe 15."
-        }
-      ],
+      "cookingMethods":"STEP 1: Sample method for recipe 15.",
       "category": [
         {
           "id": 1,
@@ -572,12 +497,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 16,
-          "content": "STEP 1: Sample method for recipe 16."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 16.",
       "category": [
         {
           "id": 1,
@@ -602,12 +522,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 17,
-          "content": "STEP 1: Sample method for recipe 17."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 17.",
       "category": [
         {
           "id": 1,
@@ -632,12 +547,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 18,
-          "content": "STEP 1: Sample method for recipe 18."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 18.",
       "category": [
         {
           "id": 1,
@@ -662,12 +572,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 19,
-          "content": "STEP 1: Sample method for recipe 19."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 19.",
       "category": [
         {
           "id": 1,
@@ -692,12 +597,7 @@ const recipeData = [
           "name": "Sample Food Name"
         }
       ],
-      "cookingMethods": [
-        {
-          "id": 20,
-          "content": "STEP 1: Sample method for recipe 20."
-        }
-      ],
+      "cookingMethods": "STEP 1: Sample method for recipe 20.",
       "category": [
         {
           "id": 1,

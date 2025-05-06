@@ -457,12 +457,9 @@ createBtn.addEventListener("click", function (e) {
         return;
     }
 
-    // Kiểm tra xem thực phẩm đã tồn tại với cùng tên, source, category và quantity hay chưa
+    // Kiểm tra xem thực phẩm đã tồn tại với cùng tên
     const isDuplicate = foods.some(food =>
-        food.name.toLowerCase() === name.toLowerCase() &&
-        food.source.toLowerCase() === source.toLowerCase() &&
-        food.category.toLowerCase() === category.toLowerCase() &&
-        food.quantity === quantity
+        food.name.toLowerCase() === name.toLowerCase()
     );
     if (isDuplicate) {
         showToast('Thực phẩm đã tồn tại với các thông tin này!', 'danger');

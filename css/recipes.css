@@ -249,3 +249,7 @@ body {
     position: absolute;
     top : 10%;
 }
+#imagePreview{
+    width: 200px;
+    height: 200px;
+}

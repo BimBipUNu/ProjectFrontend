@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/assets/icons/logo.jpg">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/recipes.css">
+</head>
+
+<body>
+    <div class="d-flex justify-content-start"> <!--Toàn bộ giao diện-->
+        <div class="sidebar-wrapper col-2 min-vh-100 d-flex flex-column p-0" id="sidebarCol"> <!--sidebar-->
+            <img id="logo" class="img-fluid" src="../assets/img/logo.png" alt="logo">
+            <div class="sidebar d-flex flex-column flex-grow-1" id="sidebar">
+                <a class="item" href="home-page.html">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Homepage</span>
+                </a>
+                <a class="item" href="food.html">
+                    <i class="fa-solid fa-apple-whole"></i>
+                    <span>Foods</span>
+                </a>
+                <a class="item" href="recipes.html">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Recipes</span>
+                </a>
+                <a href="#" class="item signout mt-auto">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </div>
+
+        <div id="mainContent" class="mleft-custom"><!--Content -->
+            <!-- Navbar -->
+            <nav class="navbar navbar-dark mb-4">
+                <div class="container-fluid">
+                    <button class="toggle-btn" id="toggleBtn">☰</button>
+                    <span>Tài Trần</span>
+                </div>
+            </nav>
+
+            <div id="banner">
+                <p>Recipes</p>
+                <p class="moreTitle">Create, check and update recipes</p>
+            </div>
+            <div class="container p-1 bg-white rounded">
+                <div class="container mt-4 p-0">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h4>Recipes</h4>
+                            <small class="text-muted">Search, consult and add new foods to the system</small>
+                        </div>
+                        <button type="button" class="btn btn-light" onclick="renderAddNewRecipe()">+ Thêm mới
+                            Recipe</button>
+                    </div>
+                    <!--DATA-->
+                    <div id="data" class="data">
+                        <div class="base">
+                            <div class="info1 p-3 position-relative">
+                                <div class="d-flex align-items-center justify-content-around">
+                                    <p class="community w-auto"><i class="fa-solid fa-people-group"></i> Community
+                                        Recipes</p>
+                                    <button class="customBtnLikes"><span><i
+                                                class="fa-regular fa-heart"></i></span>37</button>
+                                    <div class="containerImg mt-4">
+                                        <div class="mb-3">
+                                            <input type="text" id="imageUrl" class="form-control"
+                                                placeholder="Paste image URL here">
+                                        </div>
+                                        <div id="imagePreview" class="mt-3">
+                                        </div>
+                                    </div>
+                                    <div class="ticket position-absolute bottom-0 d-flex">
+                                        <i class="fa-solid fa-location-pin fa-rotate-270" style="color: #ea9f77;"
+                                            aria-hidden="true"></i>
+                                        <div id="categoryAddNew">
+                                            <select id="categoryAddNewSelect" class="form-select">
+                                                <option selected>Vegetarian</option>
+                                                <option>Appetizer</option>
+                                                <option>Vegan</option>
+                                                <option>Main course</option>
+                                                <option>Dessert</option>
+                                                <option>Low-carb</option>
+                                                <option>Gluten-free</option>
+                                                <option>Breakfast</option>
+                                                <option>Salad</option>
+                                                <option>Soup</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="isPublic">
+                                <div class="public-area d-flex justify-content-between align-items-center p-3">
+                                    <div>
+                                        <p>Pbblic recipe</p>
+                                        <p class="moreTitle">Publish your recipe on your website or share it with the
+                                            Nutrium community</p>
+                                    </div>
+                                    <button class="creation border-0 rounded h-50 w-25">Public</button>
+                                </div>
+                                <div class="basicInformation p-3">
+                                    <p class="title">Basic information</h5>
+                                    <p class="moreTitle">Check and edit recipe's basic information</span>
+                                    <div class="table">
+                                        <div class="label p-2">Name</div>
+                                        <input type="text" class="value p-2" id="nameAddNew">
+                                        <div class="label-addNew"><i class="fa-solid fa-pen"></i></div>
+                                        <div class="label p-2">Description</div>
+                                        <input type="text" class="value p-2" id="descriptionAddNew">
+                                        <div class="label-addNew"><i class="fa-solid fa-pen"></i></div>
+                                        <div class="label p-2">Author</div>
+                                        <input type="text" class="value p-2" id="authorAddNew">
+                                        <div class="label-addNew"><i class="fa-solid fa-pen"></i></div>
+                                        <div class="label p-2">Total time</div>
+                                        <input type="number" min="1" value="null" class="value p-2"
+                                            id="totalTimeAddNew">
+                                        <div class="label-addNew"><i class="fa-solid fa-pen"></i></div>
+                                        <div class="label p-2">Preparation time</div>
+                                        <input type="number" min="1" value="null" class="value p-2"
+                                            id="preparationTimeAddNew">
+                                        <div class="label-addNew"><i class="fa-solid fa-pen"></i></div>
+                                        <div class="label p-2">Final weight</div>
+                                        <input type="number" min="1" value="null" class="value p-2"
+                                            id="finalWeightAddNew">
+                                        <div class="label-addNew"><i class="fa-solid fa-pen"></i></div>
+                                        <div class="label p-2">Portions</div>
+                                        <input type="number" min="1" value="null" class="value p-2" id="portionsAddNew">
+                                        <div class="label-addNew"><i class="fa-solid fa-pen"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="addFav">
+                                <div class="p-2 bg-white rounded">
+                                    <i class="fa-solid fa-heart" style="color: #ea3e3e;" aria-hidden="true"></i>
+                                    <span>Add to favorites</span>
+                                </div>
+                            </div>
+                            <div class="creation p-2 rounded" onclick="renderDashboard()">
+                                <p class="m-0">Creation</p>
+                                <p class="m-0 moreTitle text-white">Create the recipe and choose the ingredients</p>
+                            </div>
+                            <div class="ingredients p-3">
+                                <p class="m-0" id="title-ingredient">Ingredients</p>
+                                <p class="moreTitle">Search and add ingredients to the recipe</p>
+
+                                <div id="card-ingredient-area">
+
+                                </div>
+
+                                <div class="add-new-area">
+                                    <nav class="border navbar navbar-white bg-white">
+                                        <div class="container-fluid">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <button class="navbar-toggler p-0 border-0" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#addNew"
+                                                    aria-controls="navbarToggleExternalContent" aria-expanded="false"
+                                                    aria-label="Toggle navigation">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p><i class="fa-solid fa-plus"></i></p>
+                                                        <p>Add new recipe</p>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                    <div class="collapse show" id="addNew" data-bs-theme="white">
+                                        <div class="border p-4 handleRecipe">
+                                            <div
+                                                class="recipeFuncion d-flex justify-content-between align-items-center g-1">
+                                                <input class="border-0 rounded-2 p-1" type="text" id="searchRecipe"
+                                                    placeholder="Search food">
+                                                <div id="sort" class="d-flex align-items-center">
+                                                    <div id="sortDirection"><i
+                                                            class="fa-solid fa-arrow-up border p-2 rounded"></i></div>
+                                                    <select class="form-select">
+                                                        <option selected>Sort by nutrient</option>
+                                                        <option>Energy</option>
+                                                        <option>Fat</option>
+                                                        <option>Carbohydrate</option>
+                                                        <option>Protein</option>
+                                                    </select>
+                                                </div>
+                                                <div id="category">
+                                                    <select class="form-select">
+                                                        <option selected>All Category</option>
+                                                        <option>Desserts</option>
+                                                        <option>Breakfast and snack</option>
+                                                        <option>Appetizers and side dishes</option>
+                                                        <option>Soups</option>
+                                                        <option>Meat dishes</option>
+                                                        <option>Fish dishes</option>
+                                                        <option>Vegetarian dishes</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <table class="border bg-white" cellpadding="10" cellspacing="0"
+                                                style="width:100%; border-collapse: collapse; font-family: sans-serif;">
+                                                <thead>
+                                                    <tr class="border-bottom" style="background-color: #f5f5f5;">
+                                                        <th colspan="3" style="text-align: left;">Nutritional
+                                                            Information</th>
+                                                        <th>Energy</th>
+                                                        <th>Fat</th>
+                                                        <th>Carbohydrate</th>
+                                                        <th>Protein</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbodyRecipe">
+
+                                                </tbody>
+                                            </table>
+                                            <!-- Pagination -->
+                                            <nav aria-label="Page navigation" class="mt-4">
+                                                <ul id="paginationIngre" class="pagination justify-content-end">
+                                                    <li class="page-item disabled"><a class="page-link" href="#">«</a>
+                                                    </li>
+                                                    <li class="page-item active"><a class="page-link" href="#">1</a>
+                                                    </li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">»</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="globalAnalysis p-2">
+                                <p>Global analysis per portion</p>
+                                <p class="moreTitle">Energy, macronutrients and fiber distribution</p>
+                                <div class="d-flex justify-content-between border-bottom mb-4">
+                                    <span>Energy</span>
+                                    <span id="energyIngre">0 <span class="moreTitle">kcal</span></span>
+                                </div>
+                                <div class="container-circle">
+                                    <div id="fatCircle" class="circle red">0g</div>
+                                    <div id="carbohydrateCircle" class="circle orange">0g</div>
+                                    <div id="proteinCircle" class="circle green">0g</div>
+                                    <div id="fiberCircle" class="circle gray"></div>
+                                    <div class="moreTitle">Fat</div>
+                                    <div class="moreTitle">Carbohydrate</div>
+                                    <div class="moreTitle">Protein</div>
+                                    <div class="moreTitle">Fiber</div>
+                                </div>
+                            </div>
+                            <div class="macronutrients p-2">
+                                <p class="m-0">Macronutrients per portion</p>
+                                <p class="moreTitle">Macronutrients distribution of the recipe</p>
+                                <canvas id="macrosChart" width="200" height="200"></canvas>
+                            </div>
+                            <div class="micronutrients p-2">
+                                <p class="m-0">Micronutrients per portion</p>
+                                <p class="moreTitle">Micronutrients distribution of the recipe</p>
+                                <table class="w-100 table-striped">
+                                    <tbody>
+                                        <tr>
+                                            <td>Sodium</td>
+                                            <td class="text-end" id="sodiumIngre"></td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Vitamin A</td>
+                                            <td class="text-end" id="vitaminAIngre"><strong></strong>ug</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vitamin B-6</td>
+                                            <td class="text-end" id="vitaminB6Ingre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Vitamin B-12</td>
+                                            <td class="text-end" id="vitaminB12Ingre"><strong></strong>ug</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vitamin C</td>
+                                            <td class="text-end" id="vitaminCIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Vitamin D (D2 + D3)</td>
+                                            <td class="text-end" id="vitaminDIngre"><strong></strong>ug</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Vitamin E</td>
+                                            <td class="text-end" id="vitaminEIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Vitamin K</td>
+                                            <td class="text-end" id="vitaminKIngre"><strong></strong>ug</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sugars</td>
+                                            <td class="text-end" id="sugarsIngre"><strong></strong>g</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Calcium</td>
+                                            <td class="text-end" id="calciumIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Iron</td>
+                                            <td class="text-end" id="ironIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Magnesium</td>
+                                            <td class="text-end" id="magnesiumIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phosphorus</td>
+                                            <td class="text-end" id="phosphorusIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Potassium</td>
+                                            <td class="text-end" id="potassiumIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zinc</td>
+                                            <td class="text-end" id="zincIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Copper</td>
+                                            <td class="text-end" id="copperIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fluoride</td>
+                                            <td class="text-end" id="fluorideIngre"><strong></strong>ug</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Manganese</td>
+                                            <td class="text-end" id="manganeseIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Selenium</td>
+                                            <td class="text-end" id="seleniumIngre"><strong></strong>ug</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Thiamin</td>
+                                            <td class="text-end" id="thiaminIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Riboflavin</td>
+                                            <td class="text-end" id="riboflavinIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Niacin</td>
+                                            <td class="text-end" id="niacinIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pantothenic acid</td>
+                                            <td class="text-end" id="pantothenicAcidIngre"><strong></strong>mg</td>
+                                        </tr>
+                                        <tr class="Bcolor-whitesmoke">
+                                            <td>Folate, total</td>
+                                            <td class="text-end" id="folateIngre"><strong></strong>ug</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="cookingMethod p-2">
+                                <p class="m-0">Cooking Method</p>
+                                <p class="moreTitle">Give instructions to prepare this recipe</p>
+                                <div class="d-flex">
+                                    <div class="label p-2 d-flex align-items-center">1</div>
+                                    <input id="cookingMethod" type="text" class="value p-2 w-100">
+                                    <div class="label-addNew"><i class="fa-solid fa-pen"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="addNewRecipe" style="background-color: #00b59b" class="w-100 text-center">Thêm
+                            mới</button>
+                        <div id="toastContainer" class="position-fixed top-0 end-0 p-3" style="z-index: 1055;"></div>
+                    </div>
+                    <!-- Pagination -->
+                    <nav aria-label="Page navigation" class="mt-4">
+                        <ul id="pagination" class="pagination justify-content-end">
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toastContainer" class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055;"></div>
+
+    <script src="https://kit.fontawesome.com/044cb39f80.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="../js/sidebar.js"></script>
+    <!-- <script src="../js/functions-for-recipe.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/recipes-add.js"></script>
+    <!-- <script src="../js/recipes.js"></script> -->
+</body>
+
+</html>
