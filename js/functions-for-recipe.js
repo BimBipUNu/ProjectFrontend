@@ -60,8 +60,7 @@ const renderDashboard = () => {
                 <p>${item.name}</p>
                 <div class="author">
                     <span id="authorName">${item.author}</span>
-                    <button id="likes" type="button"><i class="fa-regular fa-heart"></i> 37</button>
-                </div>
+                    <button class="customBtnLikes"><span><i class="fa-regular fa-heart"></i></span><span class="like-count"> 37</span></button></div>
                 <p><i class="fa-solid fa-location-pin fa-rotate-270" style="color: #ea9f77;"></i>
                     <span class="category">${item.category[0].name}</span>
                 </p>
@@ -142,16 +141,6 @@ const processData = () => {
         filteredRecipes.sort((a, b) => isAscending ? a.macronutrients.protein - b.macronutrients.protein : b.macronutrients.protein - a.macronutrients.protein);
     }
 
-    // // Phân trang
-    // const start = (currentPage - 1) * itemsPerPage;
-    // const end = start + itemsPerPage;
-    // const paginatedData = filteredData.slice(start, end);
-
-    // // Gọi hàm render để hiển thị dữ liệu
-    // renderFunction(paginatedData);
-
-    // // Hiển thị phân trang
-    // renderPagination(filteredData.length);
 
     currentPage = 1;
     renderDashboard();
@@ -370,7 +359,7 @@ const renderDetail = (id) => {
                             <div class="info1 p-3 position-relative">
                                 <div class="d-flex align-items-center justify-content-around">
                                     <p class="community w-auto"><i class="fa-solid fa-people-group"></i> Community Recipes</p>
-                                    <button class="customBtnLikes"><span><i class="fa-regular fa-heart"></i></span> 37</button>
+                                    <button class="customBtnLikes like-btn" data-id="${recipe.id}"><span><i class="fa-regular fa-heart"></i></span><span class="like-count"> 37</span></button>
                                     <img class="imgRecipe" src="${recipe.coverSrc}" width="150" height="150" alt="test">
                                     <p class="ticket position-absolute bottom-0">
                                         <i class="fa-solid fa-location-pin fa-rotate-270" style="color: #ea9f77;" aria-hidden="true"></i>
@@ -598,3 +587,5 @@ const renderDetail = (id) => {
         }
     });
 }
+
+renderDashboard();

@@ -96,7 +96,7 @@ const recipeData = [
     {
       "id": 1,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Grilled+Chicken+Salad",
+      "coverSrc": "https://th.bing.com/th/id/OIP.EioxSfE-mUL_IHw3hxEpjQHaE8?w=266&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Grilled Chicken Salad",
       "description": "A fresh salad with grilled chicken and broccoli.",
       "author": "Chef Anna",
@@ -129,7 +129,7 @@ const recipeData = [
     {
       "id": 2,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Salmon+Rice+Bowl",
+      "coverSrc": "https://ts3.mm.bing.net/th?id=OIP.3f4uw03GjHN2wa2tSeNc4wHaIu&pid=15.1",
       "name": "Salmon Rice Bowl",
       "description": "Nutritious salmon served with cooked white rice.",
       "author": "Chef Tom",
@@ -158,7 +158,7 @@ const recipeData = [
     {
       "id": 3,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+3",
+      "coverSrc": "https://th.bing.com/th/id/OIF.56H9wSOdIz6awEEDLfndfQ?w=221&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 3",
       "description": "This is a sample description for recipe 3.",
       "author": "Chef Lucy",
@@ -183,7 +183,7 @@ const recipeData = [
     {
       "id": 4,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+4",
+      "coverSrc": "https://th.bing.com/th?id=OIF.3Jm%2fSk9ofV%2blCbZael6Cjw&w=287&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 4",
       "description": "This is a sample description for recipe 4.",
       "author": "Chef Mario",
@@ -208,7 +208,7 @@ const recipeData = [
     {
       "id": 5,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+5",
+      "coverSrc": "https://th.bing.com/th/id/OIF.ZFisLG0VPE7ojZabbSMBDQ?w=293&h=187&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 5",
       "description": "This is a sample description for recipe 5.",
       "author": "Chef Anna",
@@ -233,7 +233,7 @@ const recipeData = [
     {
       "id": 6,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+6",
+      "coverSrc": "https://th.bing.com/th?id=OIF.l8GKk%2bt1YUPg%2bTA%2be%2fXf5g&w=274&h=181&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 6",
       "description": "This is a sample description for recipe 6.",
       "author": "Chef Tom",
@@ -258,7 +258,7 @@ const recipeData = [
     {
       "id": 7,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+7",
+      "coverSrc": "https://th.bing.com/th/id/OIF.WkAYxFCDbRlt5h2XDSvxNg?w=204&h=204&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 7",
       "description": "This is a sample description for recipe 7.",
       "author": "Chef Brian",
@@ -283,7 +283,7 @@ const recipeData = [
     {
       "id": 8,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+8",
+      "coverSrc": "https://th.bing.com/th/id/OIF.WkAYxFCDbRlt5h2XDSvxNg?w=204&h=204&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 8",
       "description": "This is a sample description for recipe 8.",
       "author": "Chef Lucy",
@@ -308,7 +308,7 @@ const recipeData = [
     {
       "id": 9,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+9",
+      "coverSrc": "https://th.bing.com/th/id/OIP.2WcyUyDATvsf7jkLdn-qIQHaHa?w=178&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 9",
       "description": "This is a sample description for recipe 9.",
       "author": "Chef Mario",
@@ -333,7 +333,7 @@ const recipeData = [
     {
       "id": 10,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+10",
+      "coverSrc": "https://th.bing.com/th/id/OIP.nHdjesbJ7Yc8yl2bJQuY7wHaEo?w=294&h=183&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 10",
       "description": "This is a sample description for recipe 10.",
       "author": "Chef Anna",
@@ -358,7 +358,7 @@ const recipeData = [
     {
       "id": 11,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+11",
+      "coverSrc": "https://th.bing.com/th/id/OIP.bVHDaKf60bWsy6yY2EEJ8gHaE8?w=240&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 11",
       "description": "This is a sample description for recipe 11.",
       "author": "Chef Tom",
@@ -383,7 +383,7 @@ const recipeData = [
     {
       "id": 12,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+12",
+      "coverSrc": "https://ts4.mm.bing.net/th?id=OIP.Xp2RQVjyCr3kN1G8VhcK_wHaE_&pid=15.1",
       "name": "Sample Recipe 12",
       "description": "This is a sample description for recipe 12.",
       "author": "Chef Brian",
@@ -408,7 +408,7 @@ const recipeData = [
     {
       "id": 13,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+13",
+      "coverSrc": "https://ts4.mm.bing.net/th?id=OIP.Xp2RQVjyCr3kN1G8VhcK_wHaE_&pid=15.1",
       "name": "Sample Recipe 13",
       "description": "This is a sample description for recipe 13.",
       "author": "Chef Lucy",
@@ -433,7 +433,7 @@ const recipeData = [
     {
       "id": 14,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+14",
+      "coverSrc": "https://ts2.mm.bing.net/th?id=OIP.hGj7MO2CdB1qIP_fuOivgwHaF7&pid=15.1",
       "name": "Sample Recipe 14",
       "description": "This is a sample description for recipe 14.",
       "author": "Chef Mario",
@@ -458,7 +458,7 @@ const recipeData = [
     {
       "id": 15,
       "isFav":false,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+15",
+      "coverSrc": "https://ts4.mm.bing.net/th?id=OIP.N5bu5Tbinx3dJclxTasRHwHaE7&pid=15.1",
       "name": "Sample Recipe 15",
       "description": "This is a sample description for recipe 15.",
       "author": "Chef Anna",
@@ -483,7 +483,7 @@ const recipeData = [
     {
       "id": 16,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+16",
+      "coverSrc": "https://th.bing.com/th/id/OIP.g9meiANJcKP0ekLeCy4laQHaE7?w=247&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 16",
       "description": "This is a sample description for recipe 16.",
       "author": "Chef Tom",
@@ -508,7 +508,7 @@ const recipeData = [
     {
       "id": 17,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+17",
+      "coverSrc": "https://ts2.mm.bing.net/th?id=OIP.By3e7haCpDi1PQ2Qx7yHqQHaLH&pid=15.1",
       "name": "Sample Recipe 17",
       "description": "This is a sample description for recipe 17.",
       "author": "Chef Brian",
@@ -533,7 +533,7 @@ const recipeData = [
     {
       "id": 18,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+18",
+      "coverSrc": "https://th.bing.com/th/id/OIP.9nl2eFOD4SKNC_FIn0bSqQHaFj?w=240&h=181&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 18",
       "description": "This is a sample description for recipe 18.",
       "author": "Chef Lucy",
@@ -558,7 +558,7 @@ const recipeData = [
     {
       "id": 19,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+19",
+      "coverSrc": "https://th.bing.com/th/id/OIP.EioxSfE-mUL_IHw3hxEpjQHaE8?w=266&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 19",
       "description": "This is a sample description for recipe 19.",
       "author": "Chef Mario",
@@ -583,7 +583,7 @@ const recipeData = [
     {
       "id": 20,
       "isFav":true,
-      "coverSrc": "https://via.placeholder.com/300x200.png?text=Recipe+20",
+      "coverSrc": "https://th.bing.com/th/id/OIP.5XZGu7I9rqQc67dpzviiugHaE7?w=272&h=181&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3",
       "name": "Sample Recipe 20",
       "description": "This is a sample description for recipe 20.",
       "author": "Chef Anna",

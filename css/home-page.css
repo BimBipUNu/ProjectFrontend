@@ -14,13 +14,13 @@ body {
     font-size: 12px;
     padding: 0;
 }
-#search {
+#searchHomePage {
     width: calc(695 / 16*1rem);
 }
-#sort {
+#sortHomePage {
     width: calc(218 / 16*1rem);
 }
-#category {
+#categoryHomePage {
     width: calc(200 / 16*1rem);
 }
 #banner {
